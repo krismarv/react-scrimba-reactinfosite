@@ -1,46 +1,69 @@
-/*
-Challenge: Starting from scratch, build and render the 
-HTML for our section project. Check the Google slide for 
-what you're trying to build.
+/**
+Challenge: 
 
-We'll be adding styling to it later.
+Part 2: 
+- Add a `header` element with a nested `nav` element. Inside the `nav`,
+  include a `img` element with the image of the React logo inside
+  (src="./react-logo.png") and make sure to set the width to something
+  more manageable so it doesn't take up the whole screen
+- Add an `h1` with some text describing the page. (E.g. "Reasons
+  I'm excited to learn React"). Place it above the ordered list.
+- Add a `footer` after the list that says: 
+    "© 20xx <last name here> development. All rights reserved."
 
-Hints:
-* The React logo is a file in the project tree, so you can
-  access it by using `src="./react-logo.png" in your image
-  element
-* You can also set the `width` attribute of the image element
-  just like in HTML. In the slide, I have it set to 40px
  */
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 function Header () {
   return (
-    <div>
-      <img src="react-logo.png" width="40px"></img>
+    <nav className='navbar'>
+      <img className="logo-img" src="react-logo.png"></img>
+      <ul className="nav-items">
+        <li>Pricing</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  )
+}
+
+function Footer() {
+  return (
+    <footer>
+        <small>© 2022 Marvalova development. All rights reserved.</small>
+      </footer>
+  )
+}
+
+function MainContent () {
+  return (
+    <div className='main-content'>
+      <h1>This is why I want to learn React</h1>
+      <ul>
+        <li>I haven't learnt any frontend skills since Bootstrap</li>
+        <li>It's in-demand</li>
+        <li>It's pretty exciting to learn</li>
+        <li>I'm focusing on JavaScript for both the front end and the back end</li>
+      </ul>
     </div>
+    
   )
 }
 
 function PageBody () {
   return (
     <div>
-    <h1>Fun Facts About React</h1><ul>
-      <li>Was first released in 2013</li>
-      <li>Was originally created by Jordan Walke</li>
-      <li>Has well over 100K stars on Github</li>
-      <li>Is maintained by Facebook</li>
-      <li>Powers thousands of enterprise apps, including mobile apps</li>
-    </ul>
+      <Header />
+      <MainContent />
+      <Footer />
     </div>
   )
 }
 
+
 ReactDOM.render(
   <div>
-    <Header />
     <PageBody />
   </div>
   , document.getElementById("root"))

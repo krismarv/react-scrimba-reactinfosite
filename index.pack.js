@@ -446,37 +446,67 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/*
-Challenge: Starting from scratch, build and render the 
-HTML for our section project. Check the Google slide for 
-what you're trying to build.
+/**
+Challenge: 
 
-We'll be adding styling to it later.
+Part 2: 
+- Add a `header` element with a nested `nav` element. Inside the `nav`,
+  include a `img` element with the image of the React logo inside
+  (src="./react-logo.png") and make sure to set the width to something
+  more manageable so it doesn't take up the whole screen
+- Add an `h1` with some text describing the page. (E.g. "Reasons
+  I'm excited to learn React"). Place it above the ordered list.
+- Add a `footer` after the list that says: 
+    "© 20xx <last name here> development. All rights reserved."
 
-Hints:
-* The React logo is a file in the project tree, so you can
-  access it by using `src="./react-logo.png" in your image
-  element
-* You can also set the `width` attribute of the image element
-  just like in HTML. In the slide, I have it set to 40px
  */
-
 function Header() {
   return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement('img', { src: 'react-logo.png', width: '40px' })
+    'nav',
+    { className: 'navbar' },
+    _react2.default.createElement('img', { className: 'logo-img', src: 'react-logo.png' }),
+    _react2.default.createElement(
+      'ul',
+      { className: 'nav-items' },
+      _react2.default.createElement(
+        'li',
+        null,
+        'Pricing'
+      ),
+      _react2.default.createElement(
+        'li',
+        null,
+        'About'
+      ),
+      _react2.default.createElement(
+        'li',
+        null,
+        'Contact'
+      )
+    )
   );
 }
 
-function PageBody() {
+function Footer() {
+  return _react2.default.createElement(
+    'footer',
+    null,
+    _react2.default.createElement(
+      'small',
+      null,
+      '\xA9 2022 Marvalova development. All rights reserved.'
+    )
+  );
+}
+
+function MainContent() {
   return _react2.default.createElement(
     'div',
-    null,
+    { className: 'main-content' },
     _react2.default.createElement(
       'h1',
       null,
-      'Fun Facts About React'
+      'This is why I want to learn React'
     ),
     _react2.default.createElement(
       'ul',
@@ -484,36 +514,40 @@ function PageBody() {
       _react2.default.createElement(
         'li',
         null,
-        'Was first released in 2013'
+        'I haven\'t learnt any frontend skills since Bootstrap'
       ),
       _react2.default.createElement(
         'li',
         null,
-        'Was originally created by Jordan Walke'
+        'It\'s in-demand'
       ),
       _react2.default.createElement(
         'li',
         null,
-        'Has well over 100K stars on Github'
+        'It\'s pretty exciting to learn'
       ),
       _react2.default.createElement(
         'li',
         null,
-        'Is maintained by Facebook'
-      ),
-      _react2.default.createElement(
-        'li',
-        null,
-        'Powers thousands of enterprise apps, including mobile apps'
+        'I\'m focusing on JavaScript for both the front end and the back end'
       )
     )
+  );
+}
+
+function PageBody() {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(Header, null),
+    _react2.default.createElement(MainContent, null),
+    _react2.default.createElement(Footer, null)
   );
 }
 
 _reactDom2.default.render(_react2.default.createElement(
   'div',
   null,
-  _react2.default.createElement(Header, null),
   _react2.default.createElement(PageBody, null)
 ), document.getElementById("root"));
 
