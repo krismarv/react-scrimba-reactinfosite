@@ -1,4 +1,7 @@
-# title(){return this.options.title||this.options.name}
+# react-scrimba-reactinfosite
+First project from https://scrimba.com/learn/learnreact
+
+--- 
 
 Quick start:
 
@@ -29,5 +32,4 @@ in a while. So if you've ever wanted to "give back" to Scrimba, you can do that 
 	It would also mean the world to us if you share the courses.  
 
 Happy Coding!
-# react-scrimba-reactinfosite
-First project from https://scrimba.com/learn/learnreact
+
